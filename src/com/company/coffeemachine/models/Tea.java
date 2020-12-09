@@ -1,4 +1,4 @@
-package com.company.coffeemachine;
+package com.company.coffeemachine.models;
 
 public class Tea extends Drink {
 
@@ -12,9 +12,10 @@ public class Tea extends Drink {
 
     //region Public Methods
 
+
     @Override
-    public void printReceipt(Drink customerDrink) {
-        System.out.println("Enjoy your tea with " + customerDrink.getSugarCount() + " sugars!");
+    public String toString() {
+        return "Enjoy your tea with " + this.getSugarCount() + " sugars";
     }
 
     //endregion

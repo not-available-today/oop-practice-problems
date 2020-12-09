@@ -1,4 +1,4 @@
-package com.company.coffeemachine;
+package com.company.coffeemachine.models;
 
 public abstract class Drink {
 
@@ -12,7 +12,7 @@ public abstract class Drink {
     //endregion
 
     //region Public Methods
-    public abstract void printReceipt(Drink customerDrink);
+
 
     //endregion
 

@@ -1,5 +1,7 @@
 package com.company.coffeemachine;
 
+import com.company.coffeemachine.models.Drink;
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,20 +9,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.nextLine();
+        System.out.println("Please input your order(Drink:Number of Sugars): ");
+        Command command = new Command(scanner.nextLine());
 
-
-        Command command = new Command();
-        command = command.processCommand(input.split(":"));
-
+        //command = command.processCommand();
 
         CoffeeMachine coffeeMachine = new CoffeeMachine();
-
-
         Drink customerDrink = coffeeMachine.makeDrink(command);
 
 
-        customerDrink.printReceipt(customerDrink);
+        System.out.println(customerDrink.toString());
+
 
     }
 }

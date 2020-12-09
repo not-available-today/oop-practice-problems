@@ -1,5 +1,9 @@
 package com.company.coffeemachine;
 
+import com.company.coffeemachine.models.Coffee;
+import com.company.coffeemachine.models.Drink;
+import com.company.coffeemachine.models.Tea;
+
 public class CoffeeMachine {
     //region Properties
 
@@ -11,18 +15,15 @@ public class CoffeeMachine {
 
     //region Public Methods
     public Drink makeDrink(Command command){
-        if(command.getDrinkType().equals("C")){
-            Drink drink = new Coffee();
-            drink.setType(command.getDrinkType());
-            drink.setSugarCount(command.getSugarCount());
-            return drink;
-        }else if(command.getDrinkType().equals("T")){
-            Drink drink = new Tea();
-            drink.setType(command.getDrinkType());
-            drink.setSugarCount(command.getSugarCount());
-            return drink;
+        if(command.getDrinkType() == DrinkType.COFFEE){
+            Coffee coffee = new Coffee();
+            coffee.setSugarCount(command.getSugarCount());
+            return coffee;
+        }else if(command.getDrinkType()== DrinkType.TEA){
+            Tea tea = new Tea();
+            tea.setSugarCount(command.getSugarCount());
+            return tea;
         }
-
         return null;
     }
 
