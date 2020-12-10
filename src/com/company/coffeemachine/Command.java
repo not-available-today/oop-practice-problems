@@ -4,6 +4,8 @@ public class Command {
     //region Properties
     private DrinkType drinkType;
     private int sugarCount;
+    private boolean hasStick;
+    private boolean hasMilk;
     //endregion
 
     //region Constructors
@@ -24,6 +26,7 @@ public class Command {
             this.drinkType = DrinkType.COFFEE;
         }
         this.sugarCount = Integer.parseInt(split[1]);
+        this.hasMilk = !split[2].equals("0");
     }
 
     //endregion
@@ -35,6 +38,22 @@ public class Command {
 
     //region Setters and Getters
 
+
+    public boolean isHasStick() {
+        return hasStick;
+    }
+
+    public void setHasStick(boolean hasStick) {
+        this.hasStick = hasStick;
+    }
+
+    public boolean isHasMilk() {
+        return hasMilk;
+    }
+
+    public void setHasMilk(boolean hasMilk) {
+        this.hasMilk = hasMilk;
+    }
 
     public DrinkType getDrinkType() {
         return drinkType;

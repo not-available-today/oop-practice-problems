@@ -19,6 +19,8 @@ public class Main {
 
 
         System.out.println(customerDrink.toString());
+        MixingStick stick = new MixingStick(customerDrink);
+        stick.provideStick(stick, customerDrink);
 
 
     }
