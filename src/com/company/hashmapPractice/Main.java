@@ -1,6 +1,8 @@
 package com.company.hashmapPractice;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Main {
         for (int i = 0; i < text.length(); i++) {
             char character = text.charAt(i);
 
-            if(map.keySet().contains(character)){
+            if(map.containsKey(character)){
                 Integer counter = map.get(character);
                 counter++;
                 if(counter != 1){
@@ -21,8 +23,12 @@ public class Main {
             }else{
                map.put(character, 1);
             }
+        }
+        for (Character i: map.keySet()
+             ) {
+
 
         }
-        System.out.print(map);
     }
 }
+
